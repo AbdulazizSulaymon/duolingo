@@ -1,4 +1,4 @@
-import TranslateGameWrapper from "./TranslateGameWrapper";
+import ListeningGameWrapper from "./ListeningGameWrapper";
 import Button from "@mui/material/Button";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ const GenerateButtons = ({ arr, click }) => {
   );
 };
 
-const TranslateGame = ({ questionObj, setSubmit, setStatus }) => {
+const ListeningGame = ({ questionObj, setSubmit, setStatus }) => {
   const [answers, setAnswers] = useState([]);
   const [variants, setVariants] = useState([]);
   const [question, setQuestion] = useState("");
@@ -67,8 +67,8 @@ const TranslateGame = ({ questionObj, setSubmit, setStatus }) => {
   }, [answers]);
 
   return (
-    <TranslateGameWrapper>
-      <h1>Quyidagi gapni tarjima qiling</h1>
+    <ListeningGameWrapper>
+      <h1>Eshitib yozing.</h1>
       <div className="questionBlock mt-4 d-flex align-items-center">
         <img
           src="https://d2pur3iezf4d1j.cloudfront.net/images/52a5a774c4de18f4a4e8c91d91788347"
@@ -79,7 +79,6 @@ const TranslateGame = ({ questionObj, setSubmit, setStatus }) => {
           <Button className="me-1" onClick={() => speak(question)}>
             <VolumeUpIcon />
           </Button>
-          <p className="mb-0">{question}</p>
         </div>
       </div>
       <div className="answerBlock my-4 d-flex align-items-center">
@@ -88,8 +87,8 @@ const TranslateGame = ({ questionObj, setSubmit, setStatus }) => {
       <div className="variantsBlock d-flex align-items-center">
         <GenerateButtons arr={variants} click={addAnswer} />
       </div>
-    </TranslateGameWrapper>
+    </ListeningGameWrapper>
   );
 };
 
-export default TranslateGame;
+export default ListeningGame;
